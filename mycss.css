@@ -1,0 +1,21 @@
+
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: 1px solid #d6d9dc;
+}
+.button-container{
+    margin: 0px 4px 0px 4px;
+    padding: 0px 4px 0px 4px;
+    width: 100px;
+}
+
+.nav-item:hover{
+    border-radius: 1000px;
+    background-color: #d6d9dc;
+}
