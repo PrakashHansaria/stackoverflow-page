@@ -1,16 +1,21 @@
 
+@media (min-width: 100px) {
+    .container{
+        max-width: 1340px;
+    }
+}
+
 .sidebar-sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 48px;
     height: calc(100vh - 48px);
     padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
     border-right: 1px solid #d6d9dc;
 }
+
 .button-container{
-    margin: 0px 4px 0px 4px;
+    margin: 0px 6px 0px 6px;
     padding: 0px 4px 0px 4px;
     width: 100px;
 }
@@ -18,4 +23,46 @@
 .nav-item:hover{
     border-radius: 1000px;
     background-color: #d6d9dc;
+}
+
+.vote {
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+}
+
+td:nth-child(1) {
+    width: 10%;
+}
+  
+td:nth-child(2) {
+    width: 90%;
+    padding-top: 20px;
+}
+
+.post-tags{
+    background-color:#E1ECF4;
+    color: #39739D;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-links{
+    color: #848D95;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.post-links:hover{
+    color:black;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.post-comments{
+    color:black;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
 }
