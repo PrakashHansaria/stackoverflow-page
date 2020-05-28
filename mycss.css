@@ -1,3 +1,7 @@
+body
+{
+   font-family: Arial !important;
+}
 
 @media (min-width: 100px) {
     .container{
@@ -27,6 +31,11 @@
 
 .fa-comment-alt {
     color: blue;
+    cursor: pointer;
+}
+
+.fa-check{
+    color:green;
     cursor: pointer;
 }
 
@@ -146,4 +155,8 @@ td:nth-child(2) {
 
 .sidebar-links:hover{
     text-decoration: none;
+}
+
+.answer{
+    font-size: 15px;
 }
