@@ -13,19 +13,17 @@ function Answer(props) {
                     <tr>
                         <td className="question-votes-panel">
                             <div className="text-center">
-                                <button className="vote btn" type="button">
+                                <button className="vote btn" type="button" onClick={props.onClickUp}>
                                     <i className="fa fa-caret-up fa-3x"></i>
                                 </button>
-                                <div className="vote-count" style={{ fontSize: "20px" }}>188</div>
-                                <button className="vote btn" type="button">
+                                <div className="vote-count" style={{ fontSize: "20px" }}>{props.vote}</div>
+                                <button className="vote btn" type="button" onClick={props.onClickDown}>
                                     <i className="fa fa-caret-down fa-3x"></i>
                                 </button>
 
                                 {props.accepted?
                                 (
-                                    <button className="vote btn" type="button">
-                                        <i className="fas fa-check fa-2x"></i>
-                                    </button>
+                                    <i className="fas fa-check fa-2x"></i>
                                 ):null
                                 }
                                 

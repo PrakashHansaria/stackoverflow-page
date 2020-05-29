@@ -3,7 +3,8 @@ import '../bootstrap-4.5.0-dist/css/bootstrap.min.css';
 import '../fontawesome-free-5.13.0-web/css/all.css';
 import '../mycss.css';
 
-function Question() {
+function Question(props) {
+
     return (
         <div>
             <table className="table table-borderless">
@@ -11,17 +12,17 @@ function Question() {
                     <tr>
                         <td className="question-votes-panel">
                             <div className="text-center">
-                                <button className="vote btn" type="button" onclick="upvote()" id="up-q">
+                                <button className="vote btn" type="button" onClick={props.onClickUp} id="up-q">
                                     <i className="fa fa-caret-up fa-3x"></i>
                                 </button>
-                                <div className="vote-count" style={{ fontSize: "20px" }} id="votes-q" status="clicked">135</div>
-                                <button className="vote btn" type="button" onclick="downvote()" id="down-q">
+                                <div className="vote-count" style={{ fontSize: "20px" }}>{props.votes}</div>
+                                <button className="vote btn" type="button" onClick={props.onClickDown} id="down-q">
                                     <i className="fa fa-caret-down fa-3x"></i>
                                 </button>
-                                <button className="vote btn" type="button" onclick="bookmark()" id="bookmark-b">
+                                <button className="vote btn" type="button" onClick={props.onClickBookmark}>
                                     <i className="fa fa-bookmark fa-1x"></i>
-                                </button>
-                                <span style={{ fontSize: "14px" }} id="bookmark">12</span>
+                                </button><br></br>
+                                <span style={{ fontSize: "13px" }} >{props.bookmark}</span>
                                 <button className="vote btn mt-2" type="button">
                                     <i className="fa fa-history fa-1x"></i>
                                 </button>
