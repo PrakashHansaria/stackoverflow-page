@@ -11,7 +11,7 @@ function Tags(){
     return(
         <div style={style}>
             <h1> Tags</h1>
-            <img src={logo}></img>
+            <img src={logo} alt=""></img>
         </div>
     )
     

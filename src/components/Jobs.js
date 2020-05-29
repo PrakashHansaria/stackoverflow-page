@@ -11,7 +11,7 @@ function Jobs(){
     return(
         <div style={style}>
             <h1> Jobs page</h1>
-            <img src={logo}></img>
+            <img src={logo} alt=""></img>
         </div>
     )
     

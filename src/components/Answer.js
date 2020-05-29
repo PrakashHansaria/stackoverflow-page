@@ -23,7 +23,7 @@ function Answer(props) {
 
                                 {props.accepted?
                                 (
-                                    <i className="fas fa-check fa-2x"></i>
+                                        <i className="fas fa-check fa-2x"></i>
                                 ):null
                                 }
                                 
@@ -37,9 +37,9 @@ function Answer(props) {
                                 {props.content}
                             </div>
                             <div className="post-options mt-4 mb-5">
-                                <a href="#" className="post-links mr-2">share</a>
-                                <a href="#" className="post-links mr-2">improve this question</a>
-                                <a href="#" className="post-links mr-2">follow</a>
+                                <a href={() => false} className="post-links mr-2">share</a>
+                                <a href={() => false} className="post-links mr-2">improve this question</a>
+                                <a href={() => false} className="post-links mr-2">follow</a>
                             </div>
 
                         </td>

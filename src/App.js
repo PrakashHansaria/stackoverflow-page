@@ -80,13 +80,14 @@ class App extends React.Component {
         oldest: false,
         votes: true,
       },
-      renderval : null,
-      renderMap:{
-        home:<Home />,
-        tags:<Tags />,
-        users:<Users />,
-        jobs:<Jobs />
-      }
+      renderval: null,
+      renderMap: {
+        home: <Home />,
+        tags: <Tags />,
+        users: <Users />,
+        jobs: <Jobs />
+      },
+      question: false,
     };
   }
 
@@ -168,31 +169,35 @@ class App extends React.Component {
   }
 
   handleHome = () => {
-    this.setState({renderval:this.state.renderMap.home})
+    this.setState({ renderval: this.state.renderMap.home })
   }
-  
+
   handleMain = () => {
-    this.setState({renderval:null})
+    this.setState({ renderval: null })
   }
 
   handleTags = () => {
-    this.setState({renderval:this.state.renderMap.tags})
+    this.setState({ renderval: this.state.renderMap.tags })
   }
-  
+
   handleUsers = () => {
-    this.setState({renderval:this.state.renderMap.users})
+    this.setState({ renderval: this.state.renderMap.users })
   }
 
   handleJobs = () => {
-    this.setState({renderval:this.state.renderMap.jobs})
+    this.setState({ renderval: this.state.renderMap.jobs })
   }
 
+  handleAskQuestion = () => {
+    this.setState({ question: !this.state.question })
+  }
 
   render() {
 
     const answers = this.state.answerV.map((answerObj, index) => {
       return (
         <Answer
+          key={index}
           accepted={answerObj.accepted}
           comments={answerObj.comments}
           onClickUp={() => this.handleAnswerUpVotes(index, answerObj.value)}
@@ -204,10 +209,12 @@ class App extends React.Component {
 
     const mainDiv = (
       <main role="main" className="col-sm-10 p-4 ">
-        <QuestionHeader />
+        <QuestionHeader
+          clickAsk={this.handleAskQuestion}
+        />
         <div className="row justify-content-between">
           <div className="col-lg-8">
-           
+
             <Question
               votes={this.state.questionV}
               bookmark={this.state.bookmark.value}
@@ -254,7 +261,40 @@ class App extends React.Component {
         </div>
       </main>
     )
+
+    const askModal = (
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <input type="text" class="form-control" id="recipient-name" />
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+
     const renderValue = this.state.renderval
+
     return (
       <div>
 
@@ -262,18 +302,21 @@ class App extends React.Component {
         <div className="container ">
           <div className="row ">
 
-            <LeftSidebar 
-            homeClick = {this.handleHome}
-            mainClick = {this.handleMain}
-            tagsClick = {this.handleTags}
-            userClick = {this.handleUsers} 
-            jobsClick = {this.handleJobs}
+            {this.state.question ? askModal
+              : null}
+
+            <LeftSidebar
+              homeClick={this.handleHome}
+              mainClick={this.handleMain}
+              tagsClick={this.handleTags}
+              userClick={this.handleUsers}
+              jobsClick={this.handleJobs}
             />
 
-            {renderValue===null?
-            mainDiv:
-            renderValue
-            }
+            {renderValue === null ?
+              mainDiv :
+              renderValue}
+
           </div>
         </div >
       </div >

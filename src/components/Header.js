@@ -6,8 +6,8 @@ import logo from '../header-logo.png'
 
 function Header(){
     return(
-        <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 border-bottom sticky-top"  >
-          <a className="navbar-brand col-md-2 ml-4 text-right" href="#">
+        <nav className=" navbar navbar-expand-lg navbar-light bg-light px-5 border-bottom sticky-top"  >
+          <a className="col-md-2-header-navbar navbar-brand  ml-4 text-right" href="https://stackoverflow.com/" target="_blank">
             <img src={logo} width="160" height="35" className="d-inline-block align-top" alt="" />
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@ function Header(){
             <ul className="navbar-nav">
               <div className="button-container text-center">
                 <li className="nav-item active ">
-                  <a className="nav-link" href="#">Product <span className="sr-only">(current)</span></a>
+                  <a className="nav-link" href={() => false}>Product <span className="sr-only">(current)</span></a>
                 </li>
               </div>
               <div className="button-container text-center">

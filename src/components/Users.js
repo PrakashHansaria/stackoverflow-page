@@ -12,7 +12,7 @@ function Users(){
     return(
         <div style={style}>
             <h1> Users</h1>
-            <img src={logo}></img>
+            <img src={logo} alt=""></img>
         </div>
     )
     

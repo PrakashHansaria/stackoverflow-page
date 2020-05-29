@@ -11,7 +11,7 @@ function Home(){
     return(
         <div style={style}>
             <h1> Home page</h1>
-            <img src={logo}></img>
+            <img src={logo} alt=""></img>
         </div>
     )
     

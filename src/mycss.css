@@ -3,11 +3,11 @@ body
    font-family: Arial !important;
 }
 
-/* @media (min-width: 100px) {
+@media (min-width: 100px) {
     .container{
         max-width: 1340px;
     }
-} */
+}
 
 .sidebar-sticky {
     position: -webkit-sticky;
@@ -152,6 +152,7 @@ td:nth-child(2) {
 .right-sidebar-links-content{
     margin: 10px 0px;
     white-space: nowrap;
+    color:#0077CC;
 }
 
 .sidebar-links:hover{
@@ -169,4 +170,11 @@ td:nth-child(2) {
 .left-sidebar-button:hover{
     cursor: pointer;
     font-weight: bold;
+}
+
+@media (min-width: 300px){
+.col-md-2-header-navbar {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
 }
